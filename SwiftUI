@@ -1,0 +1,34 @@
+import SwiftUI
+
+struct TodoItem: Identifiable {
+    let id = UUID()
+    var title: String
+    var done = false
+}
+
+struct ContentView: View {
+    @State private var taskcount:Int = 2
+
+    var body: some View {
+        NavigationStack {
+            Text("Saleemullah")
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            Text("Karpagam")
+            .font(.subheadline)
+            .foregroundStyle(.secondary)
+            
+
+            Text("Semester")
+            .padding()
+            .background(.blue)
+
+            Text("You have completed \(taskcount) sem !")
+            Button("Add Task") {
+                taskcount += 1 
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        .padding(.horizontal)
+    }
+}
