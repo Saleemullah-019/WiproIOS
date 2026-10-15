@@ -1,0 +1,15 @@
+let studentName = "Saleem"
+let rollNumber: Int = 39
+var semester: Int = 5
+var cgpa: Double = 7.1
+let isHosteller: Bool = true
+print("Name: \(studentName), Roll: \(rollNumber), Semester: \(semester)")
+semester += 1
+cgpa = 8.8
+print("Name: \(studentName), Roll: \(rollNumber), Semester: \(semester), CGPA: \(cgpa)")
+studentName = "Saleem"
+print(type(of: studentName))
+print(type(of: rollNumber))
+print(type(of: semester))
+print(type(of: cgpa))
+print(type(of: isHosteller))
