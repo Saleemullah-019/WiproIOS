@@ -1,0 +1,69 @@
+import Foundation
+
+// 1. Create Enum with Associated Values
+enum Shape {
+    case circle(radius: Double)
+    case rectangle(width: Double, height: Double)
+    case triangle(base: Double, height: Double)
+
+    // 2. Computed Property for Area
+    var area: Double {
+        switch self {
+
+        case .circle(let radius):
+            return Double.pi * radius * radius
+
+        case .rectangle(let width, let height):
+            return width * height
+
+        case .triangle(let base, let height):
+            return 0.5 * base * height
+        }
+    }
+}
+
+// 3. Create Shape Objects
+let circle = Shape.circle(radius: 5)
+let rectangle = Shape.rectangle(width: 10, height: 5)
+let triangle = Shape.triangle(base: 8, height: 6)
+
+// 4. Print Areas
+print("Circle Area:", circle.area)
+print("Rectangle Area:", rectangle.area)
+print("Triangle Area:", triangle.area)
+
+
+// 5. Create Rectangle Structure
+struct Rectangle {
+    var width: Double
+    var height: Double
+
+    // Computed Property
+    var perimeter: Double {
+        return 2 * (width + height)
+    }
+
+    // Mutating Method
+    mutating func scale(by factor: Double) {
+        width *= factor
+        height *= factor
+    }
+}
+
+// 6. Original Rectangle
+var rect1 = Rectangle(width: 10, height: 5)
+
+// 7. Copy Rectangle
+var rect2 = rect1
+
+// 8. Scale Only the Copy
+rect2.scale(by: 2)
+
+// 9. Print Both Rectangles
+print("Original Width:", rect1.width)
+print("Original Height:", rect1.height)
+print("Original Perimeter:", rect1.perimeter)
+
+print("Copied Width:", rect2.width)
+print("Copied Height:", rect2.height)
+print("Copied Perimeter:", rect2.perimeter)
